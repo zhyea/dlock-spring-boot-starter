@@ -1,6 +1,6 @@
-package org.chobit.spring.rlock.interceptor;
+package org.chobit.spring.dlock.interceptor;
 
-import org.chobit.spring.rlock.RLock;
+import org.chobit.spring.dlock.DLock;
 import org.springframework.core.BridgeMethodResolver;
 import org.springframework.core.MethodClassKey;
 import org.springframework.core.annotation.AnnotatedElementUtils;
@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit;
  * Implementation of the {@link RLockOperationSource} interface
  * for working with red lock metadata in annotation format.
  *
- * <p>This class reads Spring's {@link RLock} annotations
+ * <p>This class reads Spring's {@link DLock} annotations
  * and exposes corresponding redLock operation definition to Spring's infrastructure.
  * This class may also serve as base class for a custom {@link RLockOperationSource}.
  *
@@ -85,7 +85,7 @@ public class AnnotationRLockOperationSource implements RLockOperationSource, Ser
 
     private RLockOperation parseRedLockAttribute(Method method) {
         AnnotationAttributes attributes =
-                AnnotatedElementUtils.getMergedAnnotationAttributes(method, RLock.class);
+                AnnotatedElementUtils.getMergedAnnotationAttributes(method, DLock.class);
         if (null != attributes) {
             return parseRedLockAttribute(attributes);
         } else {

@@ -1,7 +1,7 @@
-package org.chobit.spring.rlock.interceptor;
+package org.chobit.spring.dlock.interceptor;
 
-import org.chobit.spring.rlock.exception.RLockException;
-import org.chobit.spring.rlock.interceptor.spel.RLockOperationExpressionEvaluator;
+import org.chobit.spring.dlock.exception.DLockException;
+import org.chobit.spring.dlock.interceptor.spel.RLockOperationExpressionEvaluator;
 import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
 import org.slf4j.Logger;
@@ -104,7 +104,7 @@ class RLockAspectSupport implements BeanFactoryAware, InitializingBean {
 
         if (isBlank(key)) {
             logger.error("obtain red lock key error");
-            throw new RLockException("failed to get lock key");
+            throw new DLockException("failed to get lock key");
         }
 
         long waitTime = context.metadata.operation.getWaitTime();
@@ -119,7 +119,7 @@ class RLockAspectSupport implements BeanFactoryAware, InitializingBean {
             lockResult = lock.tryLock(waitTime, leaseTime, timeUnit);
             if (!lockResult) {
                 logger.error("failed to lock with key: {}", key);
-                throw new RLockException("failed to lock with key:" + key);
+                throw new DLockException("failed to lock with key:" + key);
             }
 
             logger.debug("lock succeed with key: {}", key);
@@ -288,7 +288,7 @@ class RLockAspectSupport implements BeanFactoryAware, InitializingBean {
         @Nullable
         protected Object generateKey() {
             if (isBlank(this.metadata.operation.getKey())) {
-                throw new RLockException("The key for redLock is blank.");
+                throw new DLockException("The key for redLock is blank.");
             }
             EvaluationContext evaluationContext = createEvaluationContext();
             return evaluator.key(this.metadata.operation.getKey(), this.metadata.methodKey, evaluationContext);

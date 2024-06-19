@@ -1,9 +1,9 @@
-package org.chobit.spring.rlock;
+package org.chobit.spring.dlock;
 
-import org.chobit.spring.rlock.interceptor.AnnotationRLockOperationSource;
-import org.chobit.spring.rlock.interceptor.BeanFactoryRLockOperationSourceAdvisor;
-import org.chobit.spring.rlock.interceptor.RLockInterceptor;
-import org.chobit.spring.rlock.interceptor.RLockOperationSource;
+import org.chobit.spring.dlock.interceptor.AnnotationRLockOperationSource;
+import org.chobit.spring.dlock.interceptor.BeanFactoryRLockOperationSourceAdvisor;
+import org.chobit.spring.dlock.interceptor.RLockInterceptor;
+import org.chobit.spring.dlock.interceptor.RLockOperationSource;
 import org.redisson.Redisson;
 import org.redisson.api.RedissonClient;
 import org.redisson.config.ClusterServersConfig;

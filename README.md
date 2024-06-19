@@ -1,2 +1,3 @@
-# rlock-spring-boot-starter
-依托redisson实现的分布式锁springboot starter
+# dlock-spring-boot-starter
+
+springboot分布式锁实现，可以通过redis或zookeeper实现

@@ -1,4 +1,4 @@
-package org.chobit.spring.rlock.interceptor;
+package org.chobit.spring.dlock.interceptor;
 
 import org.aopalliance.intercept.MethodInterceptor;
 import org.aopalliance.intercept.MethodInvocation;

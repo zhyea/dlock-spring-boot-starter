@@ -1,4 +1,4 @@
-package org.chobit.spring.rlock;
+package org.chobit.spring.dlock;
 
 
 import org.springframework.boot.autoconfigure.AutoConfigurationPackage;
@@ -17,7 +17,7 @@ import java.lang.annotation.*;
 @Inherited
 @AutoConfigurationPackage
 @Import(RLockConfiguration.class)
-public @interface EnableRLock {
+public @interface EnableDLock {
 
 
 }

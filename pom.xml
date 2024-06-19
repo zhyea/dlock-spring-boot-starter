@@ -11,7 +11,7 @@
     </parent>
 
     <groupId>org.chobit.spring</groupId>
-    <artifactId>rlock-spring-boot-helper</artifactId>
+    <artifactId>dlock-spring-boot-helper</artifactId>
     <version>0.0.1-snapshot</version>
     <packaging>jar</packaging>
 

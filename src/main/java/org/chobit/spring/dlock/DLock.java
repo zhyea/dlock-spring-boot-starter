@@ -1,4 +1,4 @@
-package org.chobit.spring.rlock;
+package org.chobit.spring.dlock;
 
 import java.lang.annotation.*;
 import java.util.concurrent.TimeUnit;
@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 @Inherited
-public @interface RLock {
+public @interface DLock {
 
 
     /**
